@@ -1,42 +1,22 @@
-html, 
-body, 
-.container, 
-.content-wrap {
-	overflow: hidden;
-	width: 100%;
-	height: 100%;
-}
-
-.container {
-	background: #373a47;
-}
+/**
+ * TODO find the proper way to use the .codrop-conerbox-nested
+ **/
 
 .menu-wrap {
 	color: #64697d;
 }
 
-.menu-wrap a {
-	color: #b8b7ad;
-}
-
-.menu-wrap a:hover,
-.menu-wrap a:focus {
-	color: #c94e50;
-}
-
 .content-wrap {
-	overflow-y: scroll;
-	-webkit-overflow-scrolling: touch;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
 }
 
-.content {
-	position: relative;
-	background: #b4bad2;
-}
 
-.content::before,
+.content::before {
+  background: rgba(0,0,0,0.5);
+  -webkit-transition: opacity 0.5s, -webkit-transform 0s 0.5s;
+  transition: opacity 0.5s, transform 0s 0.5s;
+}
 .menu-wrap::before {
 	position: absolute;
 	top: 0;
@@ -44,8 +24,8 @@ body,
 	z-index: 10;
 	width: 100%;
 	height: 100%;
-	background: rgba(0,0,0,0.5);
-	content: '';
+    background: rgba(0,0,0,0.5);
+    content: '';
 	opacity: 0;
 	-webkit-transition: opacity 0.5s, -webkit-transform 0s 0.5s;
 	transition: opacity 0.5s, transform 0s 0.5s;
@@ -55,14 +35,14 @@ body,
 
 /* Menu Button */
 .menu-button {
-	position: fixed;
-	z-index: 1000;
+    position: inherit;
+  z-index: auto;
 	margin: 0.5em;
-	padding: 0;
-	border: none;
+  width: auto;
+  height: auto;
+  text-indent: 0;
 	font-size: 3em;
 	color: #373a47;
-	background: transparent;
 }
 
 .menu-button span {
@@ -175,7 +155,7 @@ body,
 	font-size: 0.75em;
 }
 
-.fc-calendar .fc-row > div, 
+.fc-calendar .fc-row > div,
 .fc-calendar .fc-head > div {
 	float: left;
 	height: 100%;
